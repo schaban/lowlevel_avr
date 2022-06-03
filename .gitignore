@@ -1,0 +1,8 @@
+tmp/**
+etc/**
+cross-avr/**
+*.bin
+*.lst
+*.hex
+*.out
+*.o
