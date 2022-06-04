@@ -1,6 +1,11 @@
 #include <stdint.h>
 
-__asm (".org 0\n_entry_: jmp main\n");
+__asm (
+	".org 0\n"
+	"_entry_: jmp main\n"
+	".asciz \"lowlevel_avr\"\n"
+	".align 4\n"
+);
 
 #define _PORT_(addr) (*(volatile uint8_t*)(addr))
 #define _DDRB_ _PORT_(0x24)
@@ -25,10 +30,9 @@ static constexpr uint8_t v8(const int i) {
 
 static uint8_t s_tbl[TBL_SIZE];
 
-static void kiloloops(const int n) {
-	int i, j;
-	for (i = 0; i < n; ++i) {
-		for (j = 0; j < 1000; ++j) {
+__attribute__((noinline)) static void kiloloops(const int n) {
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < 1000; ++j) {
 			__asm volatile ("");
 		}
 	}
