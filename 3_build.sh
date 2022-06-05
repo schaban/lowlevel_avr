@@ -21,6 +21,7 @@ CROSS_OPTS="--target=$CROSS_TGT"\
 " --disable-__cxa_atexit"\
 " --disable-libunwind-exceptions --enable-clocale=gnu"\
 " --disable-libstdcxx-pch --disable-libssp"\
+" --disable-nls"\
 " --enable-plugin --disable-linker-build-id"\
 " --enable-lto"\
 " --enable-install-libiberty"\
