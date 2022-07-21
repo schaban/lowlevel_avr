@@ -9,8 +9,11 @@ fi
 
 GNUFTP=https://ftpmirror.gnu.org
 cd $_ARC_DIR_
+
+#wget $GNUFTP/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz
+wget $GNUFTP/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz
+
 wget $GNUFTP/binutils/binutils-2.37.tar.xz
-wget $GNUFTP/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz
 wget $GNUFTP/mpfr/mpfr-4.1.0.tar.xz
 wget $GNUFTP/gmp/gmp-6.2.1.tar.xz
 wget $GNUFTP/mpc/mpc-1.2.1.tar.gz

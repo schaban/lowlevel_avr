@@ -2,7 +2,7 @@
 
 _MCU_="atmega328p"
 
-CROSS_OPTS="-mmcu=$_MCU_ -ffreestanding -nostartfiles -nostdlib -fno-builtin -fno-stack-protector -fno-PIC"
+CROSS_OPTS="-mmcu=$_MCU_ -ffreestanding -nostartfiles -nostdlib -fno-builtin -fno-stack-protector -fno-PIC -Wno-array-bounds"
 
 OPTI_LVL=-Os
 
