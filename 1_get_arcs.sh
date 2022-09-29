@@ -10,8 +10,14 @@ fi
 GNUFTP=https://ftpmirror.gnu.org
 cd $_ARC_DIR_
 
-#wget $GNUFTP/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz
-wget $GNUFTP/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz
+GCC_URL=$GNUFTP/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz
+if [ "$#" -gt 0 ]; then
+	if [ "$1" = "gcc12" ]; then
+		GCC_URL=$GNUFTP/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz
+		shift
+	fi
+fi
+wget $GCC_URL
 
 wget $GNUFTP/binutils/binutils-2.37.tar.xz
 wget $GNUFTP/mpfr/mpfr-4.1.0.tar.xz
