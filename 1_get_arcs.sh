@@ -12,10 +12,16 @@ cd $_ARC_DIR_
 
 GCC_URL=$GNUFTP/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz
 if [ "$#" -gt 0 ]; then
-	if [ "$1" = "gcc12" ]; then
-		GCC_URL=$GNUFTP/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz
-		shift
-	fi
+	case "$1" in
+		gcc12)
+			GCC_URL=$GNUFTP/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz
+			shift
+		;;
+		gcc13)
+			GCC_URL=$GNUFTP/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz
+			shift
+		;;
+	esac
 fi
 wget $GCC_URL
 
