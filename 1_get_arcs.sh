@@ -18,7 +18,7 @@ if [ "$#" -gt 0 ]; then
 			shift
 		;;
 		gcc13)
-			GCC_URL=$GNUFTP/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz
+			GCC_URL=$GNUFTP/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz
 			shift
 		;;
 	esac
